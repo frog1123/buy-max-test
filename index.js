@@ -34,11 +34,9 @@ document.getElementById('buy-max').onclick = () => {
 
   level = level.add(maxFloored);
 
-  for (i = 1; i < 21; i++) {
-    if (maxFloored.gte(i)) {
-      console.log(i);
-      currency = currency.sub(baseCost.mul(Decimal.pow(costIncrease, level.sub(i))));
-    }
+  for (i = 1; i < 31; i++) {
+    if (maxFloored.gte(i)) currency = currency.sub(baseCost.mul(Decimal.pow(costIncrease, level.sub(i))));
+    else break;
   }
 
   // for when maxFloored doesnt work
